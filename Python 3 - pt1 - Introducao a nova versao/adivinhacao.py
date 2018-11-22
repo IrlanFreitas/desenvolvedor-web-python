@@ -3,12 +3,13 @@ import random #importando um modulo que não é buildin function https://docs.py
 
 print("*********************************")
 print("Bem vindo ao jogo de Adivinhação!")
-
 print("*********************************")
 
 
 # Gerado pseudo - aleatoriamente
-numero_secreto = round(random.random() * 100) # Usando snake_case
+# numero_secreto = round(random.random(1, 100) * 100) # Usando snake_case
+
+numero_secreto = random.randrange(1, 101) # Melhorando a forma de gerar número aletórios
 
 # chute = input("Digite o seu numero:") # O valor é passado por str é necessária a conversão
 
@@ -51,7 +52,7 @@ for total_tentativas_for in range( 1, total_tentativas + 1): # Usando for!
 
     #print("\nTentativa ", rodada, " de ", count_tentativas)
     print("\nTentativa {} de {}".format(total_tentativas_for, total_tentativas)) #String Interpolation
-    print("total_tentativas_for - {}".format(total_tentativas_for))
+    print("total_tentativas_for - {}".format(total_tentativas_for)) #Aprender mais sobre formatação - https://pyformat.info/
     print("numero_secreto - ", numero_secreto)
 
     while chute.isdigit() == False :
