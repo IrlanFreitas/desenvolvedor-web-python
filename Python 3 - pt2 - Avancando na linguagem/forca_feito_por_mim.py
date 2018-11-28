@@ -37,7 +37,10 @@ def jogar():
     while count < tentativas:
 
         #cls()
-        letra = input("Qual letra?").lower().strip();
+        letra = input("Qual letra?").lower().strip()
+
+        if len(letra) > 1:
+            letra = list(letra)[0]
 
         indice_letra_encontrado = [ pos for pos, char in enumerate(palavra_secreta) if char == letra]
 

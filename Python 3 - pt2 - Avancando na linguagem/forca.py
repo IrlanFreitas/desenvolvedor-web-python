@@ -13,15 +13,26 @@ def jogar():
 
     while(not acertou and not enforcou):
 
-        letra = input("Qual letra ?").lower().strip()
+        chute = input("Qual letra ?").lower().strip()
+
+        if len(chute) > 1:
+            chute = list(chute)[0]
 
         achou = False
 
         for idx, _letra in enumerate(palavra_secreta):
 
-            if _letra == letra:
+            if _letra == chute:
                 achou = True
-                formacao_palavra[idx] = letra
+                formacao_palavra[idx] = chute
+
+        index = 0
+        for _letra in palavra_secreta:
+
+            if chute == _letra:
+                print("Encontrei a letra {} na posição {}".format(_letra, index))
+            index += 1
+
 
         if achou == False:
             tentativas -= 1
