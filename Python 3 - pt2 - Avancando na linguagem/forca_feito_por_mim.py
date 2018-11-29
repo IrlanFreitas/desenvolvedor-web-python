@@ -42,14 +42,12 @@ def jogar():
         if len(letra) > 1:
             letra = list(letra)[0]
 
+        # Achando os indices na palavra
         indice_letra_encontrado = [ pos for pos, char in enumerate(palavra_secreta) if char == letra]
 
         if len(indice_letra_encontrado) == 0:
-
             count += 1
-
         else:
-
             for index in sorted(indice_letra_encontrado, reverse=True):
                 formacao_palavra[index] = letra
 
@@ -61,7 +59,6 @@ def jogar():
 
             if _letra == None:
                 terminou = False
-
 
         if terminou == True:
             print(forca)
