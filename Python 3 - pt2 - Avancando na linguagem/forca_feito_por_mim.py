@@ -1,9 +1,7 @@
 import os
 
 
-
 def exibir_palavra(_formacao_palavra, _forca):
-
     for _letra in _formacao_palavra:
 
         if _letra == None:
@@ -13,12 +11,13 @@ def exibir_palavra(_formacao_palavra, _forca):
 
     return _forca
 
+
 def cls():
-    os.system('cls' if os.name=='nt' else 'clear')
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def jogar():
-
-    #clear = lambda: os.system('cls')
+    # clear = lambda: os.system('cls')
 
     print("*********************************")
     print("***Bem vindo ao jogo de Forca!***")
@@ -34,16 +33,18 @@ def jogar():
 
     count = 0
 
+    print(exibir_palavra(formacao_palavra, forca))
+
     while count < tentativas:
 
-        #cls()
+        # cls()
         letra = input("Qual letra?").lower().strip()
 
         if len(letra) > 1:
             letra = list(letra)[0]
 
         # Achando os indices na palavra
-        indice_letra_encontrado = [ pos for pos, char in enumerate(palavra_secreta) if char == letra]
+        indice_letra_encontrado = [pos for pos, char in enumerate(palavra_secreta) if char == letra]
 
         if len(indice_letra_encontrado) == 0:
             count += 1
